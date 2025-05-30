@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Given a prompt, Barbie generates a disentangled 3D digital human dressed in high-fidelity and diverse garments and accessories, similar to Barbie dolls.">
+        content="Given a text prompt, Barbie aims to create an animatable, disentangled 3D avatar dressed in simulation-ready garments, along with diverse shoes and accessories, resembling iconic Barbie dolls.">
   <meta name="keywords" content="3DAIGC, Text-to-Avatar, Text-to-Garment, 3D Disentangled Human Generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
@@ -97,9 +97,7 @@
             <span class="author-block">
               <a href="https://tyshiwo.github.io/index.html">Ying Tai</a><sup>1</sup>, </span>
             <span class="author-block">
-              Qian Wang<sup>2</sup>, </span>
-            <span class="author-block">
-              <a href="https://ha0tang.github.io">Hao Tang</a><sup>3</sup>, </span>
+              <a href="https://ha0tang.github.io">Hao Tang</a><sup>2</sup>, </span>
             <span class="author-block">
               <a href="https://zili-yi.github.io">Zili Yi</a><sup>1</sup>, </span>
             <span class="author-block">
@@ -109,8 +107,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Nanjing University</span>
-            <span class="author-block"><sup>2</sup>China Mobile Research Institute</span>
-            <span class="author-block"><sup>3</sup>Peking University</span>
+            <span class="author-block"><sup>2</sup>Peking University</span>
           </div>
 
           <div class="is-size-6 publication-authors">
@@ -161,7 +158,7 @@
     <div class="hero-body">
       <img id="teaser" src="./static/images/teaser.png" alt="Teaser Image" style="width: 100%; height: auto;">
       <h2 class="subtitle has-text-justified">
-        Using only texts as input, our method can generate <b>Barbie-style</b> 3D avatars. <b>"Barbie-style"</b> refers to <b>(1)</b> the generated 3D avatars exhibiting <b>high quality</b> and <b>diversity</b>;  <b>(2)</b> the generated body, garments, and accessories being <b>disentangled</b>; and <b>(3)</b> the generated results supporting seamless <b>apparel composition</b> and user-friendly animation, similar to <b>Barbie dolls</b>.
+        Our method generates <b>Barbie-style</b> 3D avatars from textual input. <b>Barbie-style</b> refers to the following key characteristics: <b>(1) High-Quality</b> geometry and realistic appearance, ensuring visually lifelike avatars; <b>(2) Fine-Grained Decoupling</b>, separating body, clothing, shoes, and accessories to enable flexible apparel combination and editing; <b>(3) Expressive Animation</b>, supporting a wide range of body movements, facial expressions, and hand gestures; <b>(4) Simulation Compatibility</b>, enabling modeling of non-watertight garments and seamless integration into existing physical simulation pipelines.
       </h2>
     </div>
   </div>
@@ -171,184 +168,135 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">Results Overview</h2>
+        <h2 class="title is-3">Demo Video</h2>
         <video poster="" id="teaser" autoplay controls muted loop playsinline height="100%">
-          <source src="./static/videos/teaser.mp4"
+          <source src="./static/videos/demo.mp4"
                   type="video/mp4">
         </video>
-        <h2 class="title is-3">Disentangled Avatar Gallery</h2>
+        <h2 class="title is-3">Results Overview</h2>
+        <video poster="" id="teaser" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/show.mp4"
+                  type="video/mp4">
+        </video>
+        <h2 class="title is-3">Barbie-Style Avatar Gallery</h2>
         <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-case0">
-            <video poster="" id="case29" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_0.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result1.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case1">
-            <video poster="" id="case1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_1.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result2.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case2">
-            <video poster="" id="case2" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_2.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result3.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case3">
-            <video poster="" id="case3" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_3.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result4.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case4">
-            <video poster="" id="case4" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_4.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result5.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case5">
-            <video poster="" id="case5" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_5.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result6.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case6">
-            <video poster="" id="case6" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_6.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result7.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case7">
-            <video poster="" id="case7" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_7.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result8.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case8">
-            <video poster="" id="case8" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_8.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result9.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case9">
-            <video poster="" id="case9" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_9.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result10.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case10">
-            <video poster="" id="case10" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_10.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result11.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case11">
-            <video poster="" id="case11" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_11.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result12.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case12">
-            <video poster="" id="case12" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_12.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result13.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case13">
-            <video poster="" id="case13" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_13.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result14.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case14">
-            <video poster="" id="case14" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_14.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result15.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case15">
-            <video poster="" id="case15" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_15.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result16.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case16">
-            <video poster="" id="case16" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_16.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result17.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case17">
-            <video poster="" id="case17" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_17.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result18.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case18">
-            <video poster="" id="case18" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_18.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result19.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-case19">
-            <video poster="" id="case19" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_19.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case20">
-            <video poster="" id="case20" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_20.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case21">
-            <video poster="" id="case21" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_21.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case22">
-            <video poster="" id="case22" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_22.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case23">
-            <video poster="" id="case23" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_23.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case24">
-            <video poster="" id="case24" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_24.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case25">
-            <video poster="" id="case25" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_25.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case26">
-            <video poster="" id="case26" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_26.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case27">
-            <video poster="" id="case27" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_27.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-case28">
-            <video poster="" id="case28" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/case_28.mp4"
+          <div class="item item-result">
+            <video poster="" id="result" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/result20.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -368,7 +316,7 @@
       <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <h2 class="subtitle has-text-justified">
-        Recent advances in text-guided 3D avatar generation have made substantial progress by distilling knowledge from diffusion models. Despite the plausible generated appearance, existing methods cannot achieve fine-grained disentanglement or high-fidelity modeling between inner body and outfit. In this paper, we propose Barbie, a novel framework for generating 3D avatars that can be dressed in diverse and high-quality Barbie-like garments and accessories. nstead of relying on a holistic model, Barbie achieves fine-grained disentanglement on avatars by semantic-aligned separated models for human body and outfits. These disentangled 3D representations are then optimized by different expert models to guarantee the domain-specific fidelity. To balance geometry diversity and reasonableness, we propose a series of losses for template-preserving and human-prior evolving. The final avatar is enhanced by unified texture refinement for superior texture consistency. Extensive experiments demonstrate that Barbie outperforms existing methods in both dressed human and outfit generation, supporting flexible apparel combination and animation.
+        To integrate digital humans into everyday life, there is a strong demand for generating high-quality, fine-grained disentangled 3D avatars that support expressive animation and simulation capabilities, ideally from low-cost textual inputs. Although text-driven 3D avatar generation has made significant progress by leveraging 2D generative priors, existing methods still struggle to fulfill all these requirements simultaneously. To address this challenge, we propose Barbie, a novel text-driven framework for generating animatable 3D avatars with separable shoes, accessories, and simulation-ready garments, truly capturing the iconic ``Barbie doll'' aesthetic. The core of our framework lies in an expressive 3D representation combined with appropriate modeling constraints. Unlike previous methods, we innovatively employ G-Shell to uniformly model both watertight components (e.g., bodies, shoes, and accessories) and non-watertight garments compatible with simulation. Furthermore, we introduce a well-designed initialization and a hole regularization loss to ensure clean open surface modeling. These disentangled 3D representations are then optimized by specialized expert diffusion models tailored to each domain, ensuring high-fidelity outputs. To mitigate geometric artifacts and texture conflicts when combining different expert models, we further propose several effective geometric losses and strategies. Extensive experiments demonstrate that Barbie outperforms existing methods in both dressed human and outfit generation. Our framework further enables diverse applications, including apparel combination, editing, expressive animation, and physical simulation.
         </h2>
       </div>
     </div>
@@ -381,10 +329,10 @@
       <div class="column is-full">
         <h2 class="title is-3">Method Highlights</h2>
         <div class="has-text-centered">
-          <img src="./static/images/highlights.png" alt="pipeline" style="max-width: 100%; height: auto;">
+          <img src="./static/images/summary.png" alt="pipeline" style="max-width: 100%; height: auto;">
         </div>
         <h2 class="subtitle has-text-justified">
-          Compared to holistic methods, Barbie effectively decouples the human body from different apparels while exhibiting fine details in the hands and head. In contrast to disentangled approaches, Barbie demonstrates a notable quality advantage and is capable of generating detailed accessories.
+          Compared to existing methods, the avatars generated by Barbie not only exhibit exquisite geometry and realistic appearance but also wear multiple separable, realistic outfits, while supporting expressive animation and physical simulation.
         </h2>
       </div>
     </div>
@@ -400,7 +348,7 @@
           <img src="./static/images/pipeline.png" alt="pipeline" style="max-width: 100%; height: auto;">
         </div>
         <h2 class="subtitle has-text-justified">
-          Barbie consists of three stages: <b>(a)</b> Using human-specific diffusion models and self-evolving human prior loss, Barbie generates a plausible and high-fidelity basic human body; <b>(b)</b> Initializing with the semantic-aligned template mesh, Barbie creates high-quality clothes and accessories piece by piece using object-specific diffusion models and template-preserving loss; <b>(c)</b> Finally, Barbie jointly fine-tunes the assembled avatar to further enhance the texture harmony and consistency.
+        Our framework consists of three stages: (1) Human Body Generation: This stage generates a reasonable and realistic basic human body by leveraging human-specific generative priors and a novel SMPLX-evolving prior loss; (2) Apparel Generation: This stage models high-quality garments, shoes, and accessories piece by piece, utilizing object-specific diffusion models together with several initialization strategies and geometric losses; and (3) Unified Texture Refinement: This stage enhances visual harmony and consistency by jointly fine-tuning the composed avatar.
         </h2>
       </div>
     </div>
@@ -413,27 +361,21 @@
       <div class="column is-full">
         <h2 class="title is-3">Comparisons with Text-to-Avatar Methods</h2>
         <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-comp_avatar_1">
-            <video poster="" id="comp_avatar_1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_avatar_1.mp4"
+          <div class="item item-comp_avatar">
+            <video poster="" id="comp_avatar" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp1_1.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp_avatar_2">
-            <video poster="" id="comp_avatar_2" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_avatar_2.mp4"
+          <div class="item item-comp_avatar">
+            <video poster="" id="comp_avatar" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp1_2.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp_avatar_3">
-            <video poster="" id="comp_avatar_3" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_avatar_3.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-          <div class="item item-comp_avatar_4">
-            <video poster="" id="comp_avatar_4" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_avatar_4.mp4"
+          <div class="item item-comp_avatar">
+            <video poster="" id="comp_avatar" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp1_3.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -447,29 +389,47 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h2 class="title is-3">Comparisons with Text-to-Object Methods</h2>
+        <h2 class="title is-3">Comparisons with Text-to-Decoupled-Avatar Methods</h2>
         <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-comp_apparel_1">
-            <video poster="" id="comp_apparel_1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_apparel_1.mp4"
+          <div class="item item-comp_avatar">
+            <video poster="" id="comp_avatar" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp2_1.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp_apparel_2">
-            <video poster="" id="comp_apparel_2" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_apparel_2.mp4"
+          <div class="item item-comp_avatar">
+            <video poster="" id="comp_avatar" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp2_2.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp_apparel_3">
-            <video poster="" id="comp_apparel_3" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_apparel_3.mp4"
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Comparisons with Text-to-Apparel Methods</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-comp_apparel">
+            <video poster="" id="comp_apparel" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp3_1.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp_apparel_4">
-            <video poster="" id="comp_apparel_4" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp_apparel_4.mp4"
+          <div class="item item-comp_apparel">
+            <video poster="" id="comp_apparel" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp3_2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-comp_apparel">
+            <video poster="" id="comp_apparel" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/comp3_3.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -485,27 +445,27 @@
       <div class="column is-full">
         <h2 class="title is-3">Apparel Composition</h2>
         <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-comp1">
-            <video poster="" id="comp1" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp1.mp4"
+          <div class="item item-trans">
+            <video poster="" id="trans" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/trans1.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp2">
-            <video poster="" id="comp2" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp2.mp4"
+          <div class="item item-trans">
+            <video poster="" id="trans" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/trans2.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp3">
-            <video poster="" id="comp3" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp3.mp4"
+          <div class="item item-trans">
+            <video poster="" id="trans" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/trans3.mp4"
                       type="video/mp4">
             </video>
           </div>
-          <div class="item item-comp4">
-            <video poster="" id="comp4" autoplay controls muted loop playsinline height="100%">
-              <source src="./static/videos/comp4.mp4"
+          <div class="item item-trans">
+            <video poster="" id="trans" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/trans4.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -514,6 +474,115 @@
     </div>
   </div>
 </section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Apparel Editing</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-edit">
+            <video poster="" id="edit" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/edit1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-edit">
+            <video poster="" id="edit" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/edit2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-edit">
+            <video poster="" id="edit" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/edit3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-edit">
+            <video poster="" id="edit" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/edit4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Expressive Animation</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-animate">
+            <video poster="" id="animate" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/animate1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-animate">
+            <video poster="" id="animate" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/animate2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-animate">
+            <video poster="" id="animate" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/animate3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-animate">
+            <video poster="" id="animate" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/animate4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-animate">
+            <video poster="" id="animate" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/animate5.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-animate">
+            <video poster="" id="animate" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/animate6.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Physical Simulation</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-sim">
+            <video poster="" id="sim" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sim1.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-sim">
+            <video poster="" id="sim" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sim2.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- <section class="section">
   <div class="container is-max-desktop has-text-centered">
@@ -550,7 +619,7 @@
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{sun2024barbie,
   title={Barbie: Text to Barbie-Style 3D Avatars},
-  author={Sun, Xiaokun and Zhang, Zhenyu and Tai, Ying and Wang, Qian and Tang, Hao and Yi, Zili and Yang, Jian},
+  author={Sun, Xiaokun and Zhang, Zhenyu and Tai, Ying and Tang, Hao and Yi, Zili and Yang, Jian},
   journal={arXiv preprint arXiv:2408.09126},
   year={2024}
 }</code></pre>
