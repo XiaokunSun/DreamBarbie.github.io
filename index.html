@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Given a text prompt, Barbie aims to create an animatable, disentangled 3D avatar dressed in simulation-ready garments, along with diverse shoes and accessories, resembling iconic Barbie dolls.">
+        content="Given a text prompt, DreamBarbie aims to create an animatable, disentangled 3D avatar dressed in simulation-ready garments, along with diverse shoes and accessories, resembling iconic Barbie dolls.">
   <meta name="keywords" content="3DAIGC, Text-to-Avatar, Text-to-Garment, 3D Disentangled Human Generation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
-  <title>Barbie: Text to Barbie-Style 3D Avatars</title>
+  <title>DreamBarbie: Text to Barbie-Style 3D Avatars</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,7 +88,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title"><span style="color: rgb(255, 105, 180);">B</span><span style="color: rgb(255, 223, 0);">a</span><span style="color: rgb(255, 182, 193);">r</span><span style="color: rgb(183, 110, 121);">b</span><span style="color: rgb(255, 127, 80);">i</span><span style="color: rgb(250,119,182);">e</span>: Text to Barbie-Style 3D Avatars</h1>
+          <h1 class="title is-1 publication-title"><span style="color: rgb(255, 105, 180);">DreamBarbie</span>: Text to Barbie-Style <br>
+             3D Avatars</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://xiaokunsun.github.io">Xiaokun Sun</a><sup>1</sup>, </span>
@@ -110,10 +111,12 @@
             <span class="author-block"><sup>2</sup>Peking University</span>
           </div>
 
-          <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup>Corresponding author</span>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Corresponding Author</span>
           </div>
-
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><b>TVCG 2026</b></span>
+          </div>
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
@@ -126,7 +129,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://github.com/XiaokunSun/Barbie"
+                <a href="https://github.com/XiaokunSun/DreamBarbie"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -169,7 +172,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
         <h2 class="title is-3">Demo Video</h2>
-        <video poster="" id="teaser" autoplay controls muted loop playsinline height="100%">
+        <video poster="" id="teaser" autoplay controls loop playsinline height="100%">
           <source src="./static/videos/demo.mp4"
                   type="video/mp4">
         </video>
@@ -316,7 +319,16 @@
       <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <h2 class="subtitle has-text-justified">
-        To integrate digital humans into everyday life, there is a strong demand for generating high-quality, fine-grained disentangled 3D avatars that support expressive animation and simulation capabilities, ideally from low-cost textual inputs. Although text-driven 3D avatar generation has made significant progress by leveraging 2D generative priors, existing methods still struggle to fulfill all these requirements simultaneously. To address this challenge, we propose Barbie, a novel text-driven framework for generating animatable 3D avatars with separable shoes, accessories, and simulation-ready garments, truly capturing the iconic ``Barbie doll'' aesthetic. The core of our framework lies in an expressive 3D representation combined with appropriate modeling constraints. Unlike previous methods, we innovatively employ G-Shell to uniformly model both watertight components (e.g., bodies, shoes, and accessories) and non-watertight garments compatible with simulation. Furthermore, we introduce a well-designed initialization and a hole regularization loss to ensure clean open surface modeling. These disentangled 3D representations are then optimized by specialized expert diffusion models tailored to each domain, ensuring high-fidelity outputs. To mitigate geometric artifacts and texture conflicts when combining different expert models, we further propose several effective geometric losses and strategies. Extensive experiments demonstrate that Barbie outperforms existing methods in both dressed human and outfit generation. Our framework further enables diverse applications, including apparel combination, editing, expressive animation, and physical simulation.
+        To integrate digital humans into everyday life, there is a strong demand for generating high-quality, fine-grained disentangled 3D avatars that support expressive animation and simulation capabilities, ideally from low-cost textual inputs.
+        Although text-driven 3D avatar generation has made significant progress by leveraging 2D generative priors, existing methods still struggle to fulfill all these requirements simultaneously.
+        To address this challenge, we propose DreamBarbie, a novel text-driven framework for generating animatable 3D avatars with separable shoes, accessories, and simulation-ready garments, truly capturing the iconic ``Barbie doll'' aesthetic.
+        The core of our framework lies in an expressive 3D representation combined with appropriate modeling constraints.
+        Unlike prior methods, we use G-Shell to uniformly model watertight components (e.g., bodies, shoes) and non-watertight garments.
+        By reformulating boundaries as Euclidean field intersections instead of manifold geodesics, we propose an SDF-based initialization and a hole regularization loss that together achieve a 100x speedup and stable open topology without image input.
+        These disentangled 3D representations are then optimized by specialized expert diffusion models tailored to each domain, ensuring high-fidelity outputs.
+        To mitigate geometric artifacts and texture conflicts when combining different expert models, we further propose several effective geometric losses and strategies.
+        Extensive experiments demonstrate that DreamBarbie outperforms existing methods in both dressed human and outfit generation.
+        Our framework further enables diverse applications, including apparel combination, editing, expressive animation, and physical simulation.
         </h2>
       </div>
     </div>
@@ -332,7 +344,7 @@
           <img src="./static/images/summary.png" alt="pipeline" style="max-width: 100%; height: auto;">
         </div>
         <h2 class="subtitle has-text-justified">
-          Compared to existing methods, the avatars generated by Barbie not only exhibit exquisite geometry and realistic appearance but also wear multiple separable, realistic outfits, while supporting expressive animation and physical simulation.
+          Compared to existing methods, the avatars generated by DreamBarbie not only exhibit exquisite geometry and realistic appearance but also wear multiple separable, realistic outfits, while supporting expressive animation and physical simulation.
         </h2>
       </div>
     </div>
@@ -577,6 +589,18 @@
                       type="video/mp4">
             </video>
           </div>
+          <div class="item item-sim">
+            <video poster="" id="sim" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sim3.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-sim">
+            <video poster="" id="sim" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/sim4.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -617,11 +641,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{sun2024barbie,
-  title={Barbie: Text to Barbie-Style 3D Avatars},
+    <pre><code>@article{sun2026dreambarbie,
+  title={DreamBarbie: Text to Barbie-Style 3D Avatars},
   author={Sun, Xiaokun and Zhang, Zhenyu and Tai, Ying and Tang, Hao and Yi, Zili and Yang, Jian},
-  journal={arXiv preprint arXiv:2408.09126},
-  year={2024}
+  journal=TVCG,
+  year={2026}
 }</code></pre>
   </div>
 </section>
